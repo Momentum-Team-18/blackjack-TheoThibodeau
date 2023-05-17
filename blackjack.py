@@ -9,21 +9,7 @@
 import random
 
 SUITS = ['♥︎', '♠︎', '♣︎', '♦︎']
-RANKS = [
-        {"rank": 'A', "value": 11},
-        {"rank": '2', "value": 2},
-        {"rank": '3', "value": 3},
-        {"rank": '4', "value": 4},
-        {"rank": '5', "value": 5},
-        {"rank": '6', "value": 6},
-        {"rank": '7', "value": 7},
-        {"rank": '8', "value": 8},
-        {"rank": '9', "value": 9},
-        {"rank": '10', "value": 10},
-        {"rank": 'J', "value": 10},
-        {"rank": 'Q', "value": 10},
-        {"rank": 'K', "value": 10},
-    ]
+RANKS = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10,'J','Q','K']
 
 
 class Card:
@@ -128,6 +114,9 @@ class Game:
                 if sum(player_sum) <= 10:
                     player_sum.append(11)
         self.player_total = sum(player_sum)
+
+        print(f"{self.player} has a score of {self.player_total}")
+        return sum(player_sum)
         
     def dealer_card_values(self):
         dealer_sum = []
@@ -147,8 +136,8 @@ class Game:
                     dealer_sum.append(11)
         self.dealer_total = sum(dealer_sum)
 
-        print(f"{self.player} has a score of {self.player_total}")
-        print(f"{self.dealer} has a score of {self.player_total}")
+        print(f"{self.dealer} has a score of {self.dealer_total}")
+        return sum(dealer_sum)
 
 new_game = Game(SUITS, RANKS)
 new_game.player_hand()
