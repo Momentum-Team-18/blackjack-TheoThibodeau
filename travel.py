@@ -23,7 +23,7 @@ class Trip:
         return f'{self.destination} by {self.mode}'
 
 
-matt = travel.Traveler("Matt", "01/01/01", "Mars", "matt@matt.com")
+matt = Traveler("Matt", "01/01/01", "Mars", "matt@matt.com")
 mars = Trip('Mars', 'Rocket', '6 mo')
 mars.register(matt)
 for traveler in mars.travelers:
