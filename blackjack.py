@@ -114,7 +114,10 @@ class Game:
                 if sum(player_sum) <= 10:
                     player_sum.append(11)
         self.player_total = sum(player_sum)
-
+        if sum(player_sum) == 21:
+            print(f'{self.player} Wins!')
+        elif sum(player_sum) > 21:
+            print(f'{self.player} Loses!')
         print(f"{self.player} has a score of {self.player_total}")
         return sum(player_sum)
         
@@ -136,6 +139,13 @@ class Game:
                     dealer_sum.append(11)
         self.dealer_total = sum(dealer_sum)
 
+        if sum(dealer_sum) < 17:
+            self.deal_card(self.dealer)
+        elif sum(dealer_sum) == 21:
+            print('Dealer Wins!')
+        elif sum(dealer_sum) > 21:
+            print(f'{self.player} Wins!')
+        
         print(f"{self.dealer} has a score of {self.dealer_total}")
         return sum(dealer_sum)
 
@@ -146,3 +156,14 @@ new_game.dealer_card_values()
 new_game.show_cards()
 # for card in new_game.player.hand:
 #     print(card)
+    # def game_rules(self): 
+    #     player_score = self.player_card_values()
+    #     if sum(dealer_sum) < 17:
+    #         self.deal_card(self.dealer)
+    #     if sum(dealer_sum) == sum(player_sum) :
+    #         print('Dealer Wins!')
+    #     elif 
+            
+    #     if sum(dealer_sum) > 21:
+    #         print(f'{self.player} Wins!')
+    #     self.dealer_total = sum(dealer_sum)
